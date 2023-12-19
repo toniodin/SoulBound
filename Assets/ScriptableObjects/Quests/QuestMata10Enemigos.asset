@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b4fc2e3d2ea95409a84a9347635900, type: 3}
+  m_Name: QuestMata10Enemigos
+  m_EditorClassIdentifier: 
+  Nombre: Cazador Principiante
+  ID: Mata10
+  CantidadObjetivo: 10
+  Descripcion: Mata 10 enemigos para forzar tu valor.
+  RecompensaOro: 15
+  RecompensaExp: 5
+  RecompensaItem:
+    Item: {fileID: 11400000, guid: 1fa23311e7fba5d4cada3483a21f19f3, type: 2}
+    Cantidad: 5
+  CantidadActual: 0
+  QuestCompletado: 0

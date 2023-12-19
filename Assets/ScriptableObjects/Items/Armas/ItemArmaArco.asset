@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3a3ed5feb68934fbe3c27d30436bdd, type: 3}
+  m_Name: ItemArmaArco
+  m_EditorClassIdentifier: 
+  ID: ArmaArco
+  Nombre: Arco
+  Icono: {fileID: 21300000, guid: e438fa8162b9727498ef95cb711b24c9, type: 3}
+  Descripcion: Arco de gran alcance, muy bueno para largas distancias.
+  Tipo: 0
+  EsConsumible: 0
+  EsAcumulable: 0
+  AcumulacionMax: 1
+  Cantidad: 0
+  Arma: {fileID: 11400000, guid: a3313f9e2fd9c504a804b9f3a97b934f, type: 2}
