@@ -15,7 +15,7 @@ public class Inventario : Singleton<Inventario>
     public int NumeroDeSlots => numeroDeSlots;
     public InventarioItem[] ItemsInventario => itemsInventario;
 
-    private readonly string INVENTARIO_KEY = "MiJuegoMiInventario105205120";
+    private readonly string INVENTARIO_KEY = "MiJuegoMiInventario105205120"; 
     
     private void Start()
     {
@@ -169,6 +169,11 @@ public class Inventario : Singleton<Inventario>
     
     private void UsarItem(int index)
     {
+
+        if (itemsInventario[index].Tipo.ToString() != "Pociones") { 
+            return;
+        }
+
         if (itemsInventario[index] == null)
         {
             return;
