@@ -20,7 +20,7 @@ public class Inventario : Singleton<Inventario>
     private void Start()
     {
         itemsInventario = new InventarioItem[numeroDeSlots];
-        CargarInventario();
+        // CargarInventario();
     }
 
     public void AñadirItem(InventarioItem itemPorAñadir, int cantidad)
@@ -72,7 +72,7 @@ public class Inventario : Singleton<Inventario>
             AñadirItemEnSlotDisponible(itemPorAñadir, cantidad);
         }
         
-        GuardarInventario();
+        // GuardarInventario();
     }
 
     private List<int> VerificarExistencias(string itemID)
@@ -145,7 +145,7 @@ public class Inventario : Singleton<Inventario>
                 itemsInventario[index].Cantidad, index);
         }
         
-        GuardarInventario();
+        // GuardarInventario();
     }
 
     public void MoverItem(int indexInicial, int indexFinal)
@@ -164,7 +164,7 @@ public class Inventario : Singleton<Inventario>
         itemsInventario[indexInicial] = null;
         InventarioUI.Instance.DibujarItemEnInventario(null, 0, indexInicial);
         
-        GuardarInventario();
+        // GuardarInventario();
     }
     
     private void UsarItem(int index)
@@ -231,7 +231,7 @@ public class Inventario : Singleton<Inventario>
     }
     
     private InventarioData dataGuardado;
-    private void GuardarInventario()
+    /* private void GuardarInventario()
     {
         dataGuardado = new InventarioData();
         dataGuardado.ItemsDatos = new string[numeroDeSlots];
@@ -252,37 +252,37 @@ public class Inventario : Singleton<Inventario>
         }
         
         SaveGame.Save(INVENTARIO_KEY, dataGuardado);
-    }
+    }*/
 
-    private InventarioData dataCargado;
-    private void CargarInventario()
-    {
-        if (SaveGame.Exists(INVENTARIO_KEY))
-        {
-            dataCargado = SaveGame.Load<InventarioData>(INVENTARIO_KEY);
-            for (int i = 0; i < numeroDeSlots; i++)
-            {
-                if (dataCargado.ItemsDatos[i] != null)
-                {
-                    InventarioItem itemAlmacen = ItemExisteEnAlmacen(dataCargado.ItemsDatos[i]);
-                    if (itemAlmacen != null)
-                    {
-                        itemsInventario[i] = itemAlmacen.CopiarItem();
-                        itemsInventario[i].Cantidad = dataCargado.ItemsCantidad[i];
-                        InventarioUI.Instance.DibujarItemEnInventario(itemsInventario[i], 
-                            itemsInventario[i].Cantidad, i);
-                    }
-                }
-                else
-                {
-                    itemsInventario[i] = null;
-                }
-            }
-        }
-    }
-    
+    //private InventarioData dataCargado;
+    //private void CargarInventario()
+    //{
+    //    if (SaveGame.Exists(INVENTARIO_KEY))
+    //    {
+    //        dataCargado = SaveGame.Load<InventarioData>(INVENTARIO_KEY);
+    //        for (int i = 0; i < numeroDeSlots; i++)
+    //        {
+    //            if (dataCargado.ItemsDatos[i] != null)
+    //            {
+    //                InventarioItem itemAlmacen = ItemExisteEnAlmacen(dataCargado.ItemsDatos[i]);
+    //                if (itemAlmacen != null)
+    //                {
+    //                    itemsInventario[i] = itemAlmacen.CopiarItem();
+    //                    itemsInventario[i].Cantidad = dataCargado.ItemsCantidad[i];
+    //                    InventarioUI.Instance.DibujarItemEnInventario(itemsInventario[i],
+    //                        itemsInventario[i].Cantidad, i);
+    //                }
+    //            }
+    //            else
+    //            {
+    //                itemsInventario[i] = null;
+    //            }
+    //        }
+    //    }
+    //}
+
     #endregion
-    
+
     #region Eventos
 
     private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
