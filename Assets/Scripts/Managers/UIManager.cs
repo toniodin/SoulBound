@@ -55,6 +55,7 @@ public class UIManager : Singleton<UIManager>
     {
         ActualizarUIPersonaje();
         ActualizarPanelStats();
+        AbrirCerrarPanelInventarioTecla();
     }
 
     private void ActualizarUIPersonaje()
@@ -141,12 +142,24 @@ public class UIManager : Singleton<UIManager>
     {
         panelCraftingInfo.SetActive(estado);
     }
-    
-    public void AbrirCerrarPanelInventario()
+
+    public void AbrirCerrarPanelInventarioTecla()
     {
-        panelInventario.SetActive(!panelInventario.activeSelf);
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            panelInventario.SetActive(!panelInventario.activeSelf);
+
+        }
+       
     }
 
+    public void AbrirCerrarPanelInventarioClick()
+    {
+
+        panelInventario.SetActive(!panelInventario.activeSelf);
+
+    }
     public void AbrirCerrarPanelPersonajeQuests()
     {
         panelPersonajeQuests.SetActive(!panelPersonajeQuests.activeSelf);
