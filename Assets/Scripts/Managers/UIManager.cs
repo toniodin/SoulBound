@@ -120,7 +120,7 @@ public class UIManager : Singleton<UIManager>
 
     public void AbrirCerrarPanelStats()
     {
-        panelStats.SetActive(!panelStats.activeSelf);
+        OpenMenuController("Stats");   
     }
 
     public void AbrirCerrarPanelTienda()
@@ -146,26 +146,23 @@ public class UIManager : Singleton<UIManager>
 
     public void AbrirCerrarPanelInventarioTecla()
     {
-
         if (Input.GetKeyDown(KeyCode.I))
         {
-            panelInventario.SetActive(!panelInventario.activeSelf);
-
+            OpenMenuController("Inventario");
         }
-       
+
     }
 
     public void AbrirCerrarPanelInventarioClick()
     {
-
-        panelInventario.SetActive(!panelInventario.activeSelf);
+        OpenMenuController("Inventario");
 
     }
     public void AbrirCerrarPanelPersonajeQuests()
     {
-        panelPersonajeQuests.SetActive(!panelPersonajeQuests.activeSelf);
+        OpenMenuController("Quest");
     }
-    
+
     public void AbrirCerrarPanelInspectorQuests()
     {
         panelInspectorQuests.SetActive(!panelInspectorQuests.activeSelf);
@@ -191,6 +188,30 @@ public class UIManager : Singleton<UIManager>
                 break;
         }
     }
-    
+
+    public void OpenMenuController(String nombreBoton)
+    {
+        if (nombreBoton == "Inventario")
+        {
+            panelInventario.SetActive(!panelInventario.activeSelf);
+            panelStats.SetActive(false);
+            panelPersonajeQuests.SetActive(false);
+        }
+        if (nombreBoton == "Stats")
+        {
+            panelStats.SetActive(!panelStats.activeSelf);
+            panelInventario.SetActive(false);
+            panelPersonajeQuests.SetActive(false);
+        }
+        if (nombreBoton == "Quest")
+        {
+            panelPersonajeQuests.SetActive(!panelPersonajeQuests.activeSelf);
+            panelInventario.SetActive(false);
+            panelStats.SetActive(false);
+        }
+
+
+    }
+
     #endregion
 }
