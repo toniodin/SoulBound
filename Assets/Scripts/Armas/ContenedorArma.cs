@@ -6,6 +6,7 @@ public class ContenedorArma : Singleton<ContenedorArma>
 {
     [SerializeField] private Image armaIcono;
     [SerializeField] private Image armaSkillIcono;
+    [SerializeField] private Image pocionIcono;
 
     public ItemArma ArmaEquipada { get; set; }
     
@@ -21,6 +22,21 @@ public class ContenedorArma : Singleton<ContenedorArma>
             armaSkillIcono.gameObject.SetActive(true);
         }
         
+        Inventario.Instance.Personaje.PersonajeAtaque.EquiparArma(itemArma);
+    }
+
+    public void EquiparPocion(ItemArma itemArma)
+    {
+        ArmaEquipada = itemArma;
+        armaIcono.sprite = itemArma.Arma.ArmaIcono;
+        armaIcono.gameObject.SetActive(true);
+
+        if (itemArma.Arma.Tipo == TipoArma.Magia)
+        {
+            armaSkillIcono.sprite = itemArma.Arma.IconoSkill;
+            armaSkillIcono.gameObject.SetActive(true);
+        }
+
         Inventario.Instance.Personaje.PersonajeAtaque.EquiparArma(itemArma);
     }
 
