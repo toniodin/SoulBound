@@ -48,8 +48,7 @@ public class InventarioSlot : MonoBehaviour
     public void ClickSlot()
     {
         EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Click, Index);
-        
-        // Mover Item
+
         if (InventarioUI.Instance.IndexSlotInicialPorMover != -1)
         {
             if (InventarioUI.Instance.IndexSlotInicialPorMover != Index)
@@ -57,6 +56,16 @@ public class InventarioSlot : MonoBehaviour
                 // Mover
                 Inventario.Instance.MoverItem(InventarioUI.Instance.IndexSlotInicialPorMover, Index);
             }
+        }
+
+        if (Input.GetKey(KeyCode.V))
+        {
+            Inventario.Instance.UtilizarPocionVida();
+        }
+
+        if (Input.GetKey(KeyCode.B))
+        {
+            Inventario.Instance.UtilizarPocionMana();
         }
     }
 

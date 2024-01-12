@@ -15,12 +15,18 @@ public class Inventario : Singleton<Inventario>
     public int NumeroDeSlots => numeroDeSlots;
     public InventarioItem[] ItemsInventario => itemsInventario;
 
-    private readonly string INVENTARIO_KEY = "MiJuegoMiInventario105205120"; 
+    // private readonly string INVENTARIO_KEY = "MiJuegoMiInventario105205120"; 
     
     private void Start()
     {
         itemsInventario = new InventarioItem[numeroDeSlots];
         // CargarInventario();
+    }
+
+    private void Update()
+    {
+        UtilizarPocionVida();
+        UtilizarPocionMana ();
     }
 
     public void AñadirItem(InventarioItem itemPorAñadir, int cantidad)
@@ -169,7 +175,6 @@ public class Inventario : Singleton<Inventario>
     
     private void UsarItem(int index)
     {
-
         if (itemsInventario[index].Tipo.ToString() != "Pociones") { 
             return;
         }
@@ -214,6 +219,92 @@ public class Inventario : Singleton<Inventario>
 
         itemsInventario[index].RemoverItem();
     }
+
+    #region PocionesUso
+
+    public void UtilizarPocionVida()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            if (TienePocionDeVida())
+            {
+                int indexPocionVida = -1;
+                for (int i = 0; i < itemsInventario.Length; i++)
+                {
+                    InventarioItem item = itemsInventario[i];
+                    if (item != null && item.Tipo == TiposDeItem.Pociones && item is ItemPocionVida)
+                    {
+                        indexPocionVida = i;
+                        break;
+                    }
+                }
+
+                if (indexPocionVida != -1)
+                {
+                    UsarItem(indexPocionVida);
+                }
+            }
+            else
+            {
+                Debug.Log("No tienes poción de vida en el inventario.");
+            }
+        }
+    }
+
+    public bool TienePocionDeVida()
+    {
+        foreach (InventarioItem item in itemsInventario)
+        {
+            if (item != null && item.Tipo == TiposDeItem.Pociones && item is ItemPocionVida)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void UtilizarPocionMana()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (TienePocionDeMana ())
+            {
+                int indexPocionMana = -1;
+                for (int i = 0; i < itemsInventario.Length; i++)
+                {
+                    InventarioItem item = itemsInventario[i];
+                    if (item != null && item.Tipo == TiposDeItem.Pociones && item is ItemPocionMana)
+                    {
+                        indexPocionMana = i;
+                        break;
+                    }
+                }
+
+                if (indexPocionMana != -1)
+                {
+                    UsarItem(indexPocionMana);
+                }
+            }
+            else
+            {
+                Debug.Log("No tienes poción de mana en el inventario.");
+            }
+        }
+    }
+
+    public bool TienePocionDeMana()
+    {
+        foreach (InventarioItem item in itemsInventario)
+        {
+            if (item != null && item.Tipo == TiposDeItem.Pociones && item is ItemPocionMana)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    #endregion
 
     #region Guardado
 

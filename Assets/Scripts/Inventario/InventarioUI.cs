@@ -36,6 +36,9 @@ public class InventarioUI : Singleton<InventarioUI>
                 IndexSlotInicialPorMover = SlotSeleccionado.Index;
             }
         }
+
+        UtilizarPocionVida();
+        UtilizarPocionMana();
     }
 
     private void InicializarInventario()
@@ -118,7 +121,25 @@ public class InventarioUI : Singleton<InventarioUI>
             SlotSeleccionado.SeleccionarSlot();
         }
     }
-    
+
+    #region PocionesUso
+    private void UtilizarPocionVida()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Inventario.Instance.UtilizarPocionVida();
+        }
+    }
+
+    private void UtilizarPocionMana()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Inventario.Instance.UtilizarPocionMana();
+        }
+    }
+    #endregion
+
     #region Evento
 
     private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
