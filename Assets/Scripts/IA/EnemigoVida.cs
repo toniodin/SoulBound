@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemigoVida : VidaBase
 {
     public static Action<float> EventoEnemigoDerrotado;
-    
+
     [Header("Vida")]
     [SerializeField] private EnemigoBarraVida barraVidaPrefab;
     [SerializeField] private Transform barraVidaPosicion;
 
-    [Header("Rastros")] 
+    [Header("Rastros")]
     [SerializeField] private GameObject rastros;
-    
+
     private EnemigoBarraVida _enemigoBarraVidaCreada;
     private EnemigoInteraccion _enemigoInteraccion;
     private EnemigoMovimiento _enemigoMovimiento;
@@ -20,7 +20,7 @@ public class EnemigoVida : VidaBase
     private SpriteRenderer _spriteRenderer;
     private BoxCollider2D _boxCollider2D;
     private IAController _controller;
-    
+
     private void Awake()
     {
         _enemigoInteraccion = GetComponent<EnemigoInteraccion>();
@@ -51,6 +51,7 @@ public class EnemigoVida : VidaBase
     protected override void PersonajeDerrotado()
     {
         DesactivarEnemigo();
+        DeseleccionarEnemigo();
         EventoEnemigoDerrotado?.Invoke(_enemigoLoot.ExpGanada);
         QuestManager.Instance.AñadirProgreso("Mata10", 1);
         QuestManager.Instance.AñadirProgreso("Mata25", 1);
@@ -66,5 +67,10 @@ public class EnemigoVida : VidaBase
         _controller.enabled = false;
         _boxCollider2D.isTrigger = true;
         _enemigoInteraccion.DesactivarSpritesSeleccion();
+    }
+
+    private void DeseleccionarEnemigo()
+    {
+        SeleccionManager.EventoObjetoNoSeleccionado?.Invoke();
     }
 }
