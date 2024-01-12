@@ -150,19 +150,34 @@ public class Inventario : Singleton<Inventario>
 
     public void MoverItem(int indexInicial, int indexFinal)
     {
-        if (itemsInventario[indexInicial] == null || itemsInventario[indexFinal] != null)
+        if (itemsInventario[indexInicial] != null && itemsInventario[indexFinal] != null)
         {
-            return;
+
+            // Copiar item en slot final
+            InventarioItem itemPorMover = itemsInventario[indexInicial].CopiarItem();
+            InventarioItem itemIntercambio = itemsInventario[indexFinal].CopiarItem();
+            itemsInventario[indexFinal] = itemPorMover;
+            InventarioUI.Instance.DibujarItemEnInventario(itemPorMover, itemPorMover.Cantidad, indexFinal);
+
+            // Borramos Item de Slot inicial
+            itemsInventario[indexInicial] = itemIntercambio;
+            InventarioUI.Instance.DibujarItemEnInventario(itemIntercambio, itemIntercambio.Cantidad, indexInicial);
+            InventarioUI.Instance.IndexSlotInicialPorMover = -1;
+
         }
-        
-        // Copiar item en slot final
-        InventarioItem itemPorMover = itemsInventario[indexInicial].CopiarItem();
-        itemsInventario[indexFinal] = itemPorMover;
-        InventarioUI.Instance.DibujarItemEnInventario(itemPorMover, itemPorMover.Cantidad, indexFinal);
-        
-        // Borramos Item de Slot inicial
-        itemsInventario[indexInicial] = null;
-        InventarioUI.Instance.DibujarItemEnInventario(null, 0, indexInicial);
+        else if (itemsInventario[indexInicial] == null && itemsInventario[indexFinal] != null)
+        {
+
+            // Copiar item en slot final
+            InventarioItem itemPorMover = itemsInventario[indexInicial].CopiarItem();
+            itemsInventario[indexFinal] = itemPorMover;
+            InventarioUI.Instance.DibujarItemEnInventario(itemPorMover, itemPorMover.Cantidad, indexFinal);
+
+            // Borramos Item de Slot inicial
+            itemsInventario[indexInicial] = null;
+            InventarioUI.Instance.DibujarItemEnInventario(null, 0, indexInicial);
+
+        }
         
         // GuardarInventario();
     }
