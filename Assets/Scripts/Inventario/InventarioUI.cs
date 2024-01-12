@@ -16,7 +16,7 @@ public class InventarioUI : Singleton<InventarioUI>
     [SerializeField] private InventarioSlot slotPrefab;
     [SerializeField] private Transform contenedor;
 
-    public int IndexSlotInicialPorMover { get; private set; }
+    public int IndexSlotInicialPorMover { get; set; }
     public InventarioSlot SlotSeleccionado { get; private set; }
     private List<InventarioSlot> slotsDisponibles = new List<InventarioSlot>();
 
