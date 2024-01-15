@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,7 +16,8 @@ public class DialogoManager : Singleton<DialogoManager>
     private Queue<string> dialogosSecuencia;
     private bool dialogoAnimado;
     private bool despedidaMostrada;
-    
+
+    private float velocidadAnimacion = 0.03f;
     private void Start()
     {
         dialogosSecuencia = new Queue<string>();
@@ -29,10 +29,10 @@ public class DialogoManager : Singleton<DialogoManager>
         {
             return;
         }
-        
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ConfigurarPanel(NPCDisponible.Dialogo);
+            IniciarNuevaConversacion(NPCDisponible.Dialogo);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -50,12 +50,38 @@ public class DialogoManager : Singleton<DialogoManager>
                 AbrirCerrarPanelDialogo(false);
                 return;
             }
-            
+
             if (dialogoAnimado)
             {
                 ContinuarDialogo();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AjustarVelocidadAnimacion(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            AjustarVelocidadAnimacion(false);
+        }
+    }
+
+    private void IniciarNuevaConversacion(NPCDialogo npcDialogo)
+    {
+        LimpiarConversacionAnterior();
+        ConfigurarPanel(npcDialogo);
+    }
+
+    private void LimpiarConversacionAnterior()
+    {
+        dialogosSecuencia.Clear();
+    }
+
+    private void AjustarVelocidadAnimacion(bool aumentar)
+    {
+        velocidadAnimacion = aumentar ? 0.0004f : 0.03f;
     }
 
     public void AbrirCerrarPanelDialogo(bool estado)
@@ -67,7 +93,7 @@ public class DialogoManager : Singleton<DialogoManager>
     {
         AbrirCerrarPanelDialogo(true);
         CargarDialogosSencuencia(npcDialogo);
-        
+
         npcIcono.sprite = npcDialogo.Icono;
         npcNombreTMP.text = $"{npcDialogo.Nombre}:";
         MostrarTextoConAnimacion(npcDialogo.Saludo);
@@ -105,11 +131,11 @@ public class DialogoManager : Singleton<DialogoManager>
             despedidaMostrada = true;
             return;
         }
-        
+
         string siguienteDialogo = dialogosSecuencia.Dequeue();
         MostrarTextoConAnimacion(siguienteDialogo);
     }
-    
+
     private IEnumerator AnimarTexto(string oracion)
     {
         dialogoAnimado = false;
@@ -118,7 +144,7 @@ public class DialogoManager : Singleton<DialogoManager>
         for (int i = 0; i < letras.Length; i++)
         {
             npcConversacionTMP.text += letras[i];
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(velocidadAnimacion);
         }
 
         dialogoAnimado = true;
