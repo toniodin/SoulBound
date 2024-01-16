@@ -120,7 +120,8 @@ public class UIManager : Singleton<UIManager>
 
     public void AbrirCerrarPanelStats()
     {
-        OpenMenuController("Stats");   
+        OpenMenuController("Stats");
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void AbrirCerrarPanelTienda()
@@ -156,11 +157,13 @@ public class UIManager : Singleton<UIManager>
     public void AbrirCerrarPanelInventarioClick()
     {
         OpenMenuController("Inventario");
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
 
     }
     public void AbrirCerrarPanelPersonajeQuests()
     {
         OpenMenuController("Quest");
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void AbrirCerrarPanelInspectorQuests()
