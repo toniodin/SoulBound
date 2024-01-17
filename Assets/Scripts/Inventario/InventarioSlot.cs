@@ -23,6 +23,10 @@ public class InventarioSlot : MonoBehaviour
 
     private Button _button;
 
+    private int clickCount = 0;
+    private float doubleClickTimeThreshold = 0.5f; // Puedes ajustar este valor según tus necesidades
+    private float lastClickTime = 0f;
+
     private void Awake()
     {
         _button = GetComponent<Button>();
@@ -47,26 +51,40 @@ public class InventarioSlot : MonoBehaviour
     
     public void ClickSlot()
     {
-        EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Click, Index);
+        float currentTime = Time.time;
 
-        if (InventarioUI.Instance.IndexSlotInicialPorMover != -1)
+        // Verificar si es un doble clic
+        if (currentTime - lastClickTime < doubleClickTimeThreshold)
         {
-            if (InventarioUI.Instance.IndexSlotInicialPorMover != Index)
+            // Es un doble clic
+            SlotEquiparItem();
+        }
+        else
+        {
+            // Es un clic simple
+            EventoSlotInteraccion?.Invoke(TipoDeInteraccion.Click, Index);
+
+            if (InventarioUI.Instance.IndexSlotInicialPorMover != -1)
             {
-                // Mover
-                Inventario.Instance.MoverItem(InventarioUI.Instance.IndexSlotInicialPorMover, Index);
+                if (InventarioUI.Instance.IndexSlotInicialPorMover != Index)
+                {
+                    // Mover
+                    Inventario.Instance.MoverItem(InventarioUI.Instance.IndexSlotInicialPorMover, Index);
+                }
+            }
+
+            if (Input.GetKey(KeyCode.V))
+            {
+                Inventario.Instance.UtilizarPocionVida();
+            }
+
+            if (Input.GetKey(KeyCode.B))
+            {
+                Inventario.Instance.UtilizarPocionMana();
             }
         }
 
-        if (Input.GetKey(KeyCode.V))
-        {
-            Inventario.Instance.UtilizarPocionVida();
-        }
-
-        if (Input.GetKey(KeyCode.B))
-        {
-            Inventario.Instance.UtilizarPocionMana();
-        }
+        lastClickTime = currentTime;
     }
 
     public void SlotUsarItem()
