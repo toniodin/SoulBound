@@ -207,6 +207,7 @@ public class Inventario : Singleton<Inventario>
 
     private void EquiparItem(int index)
     {
+
         if (itemsInventario[index] == null)
         {
             return;
@@ -216,7 +217,7 @@ public class Inventario : Singleton<Inventario>
         {
             return;
         }
-
+        RemoverItem(index);
         itemsInventario[index].EquiparItem();
     }
 
