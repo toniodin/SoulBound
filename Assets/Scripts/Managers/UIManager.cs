@@ -29,6 +29,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private TextMeshProUGUI expTMP;
     [SerializeField] private TextMeshProUGUI nivelTMP;
     [SerializeField] private TextMeshProUGUI monedasTMP;
+    [SerializeField] private TextMeshProUGUI pocionesVidaTMP;
+    [SerializeField] private TextMeshProUGUI pocionesManaTMP;
 
     [Header("Stats")] 
     [SerializeField] private TextMeshProUGUI statDañoTMP;
@@ -54,12 +56,12 @@ public class UIManager : Singleton<UIManager>
 
     private void Update()
     {
-        ActualizarUIPersonaje();
+        ActualizarUIPersonaje(null, null);
         ActualizarPanelStats();
         AbrirCerrarPanelInventarioTecla();
     }
 
-    private void ActualizarUIPersonaje()
+    public void ActualizarUIPersonaje(int? cantidad, string? itemReferencia)
     {
         vidaPlayer.fillAmount = Mathf.Lerp(vidaPlayer.fillAmount, 
             vidaActual / vidaMax, 10f * Time.deltaTime);
@@ -73,6 +75,15 @@ public class UIManager : Singleton<UIManager>
         expTMP.text = $"{((expActual/expRequeridaNuevoNivel) * 100):F2}%";
         nivelTMP.text = $"Nivel {stats.Nivel}";
         monedasTMP.text = MonedasManager.Instance.MonedasTotales.ToString();
+
+        if (itemReferencia == "Pocion de Vida")
+        {
+            pocionesVidaTMP.text = (int.Parse(pocionesVidaTMP.text) + cantidad).ToString();
+        }
+        else if (itemReferencia == "Pocion de Mana")
+        {
+            pocionesManaTMP.text = (int.Parse(pocionesManaTMP.text) + cantidad).ToString();
+        }
     }
 
     private void ActualizarPanelStats()

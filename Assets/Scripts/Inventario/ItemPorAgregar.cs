@@ -11,8 +11,17 @@ public class ItemPorAgregar : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Inventario.Instance.AñadirItem(inventarioItemReferencia, cantidadPorAgregar);
+            if (inventarioItemReferencia.EsConsumible && (inventarioItemReferencia.Nombre == "Pocion de Vida" || inventarioItemReferencia.Nombre == "Pocion de Mana"))
+            {
+                UIManager.Instance.ActualizarUIPersonaje(cantidadPorAgregar, inventarioItemReferencia.Nombre);
+                Inventario.Instance.AñadirItem(inventarioItemReferencia, cantidadPorAgregar);
+            }
+            else 
+            {
+                Inventario.Instance.AñadirItem(inventarioItemReferencia, cantidadPorAgregar);
+            }
             Destroy(gameObject);
+
         }
     }
 }
