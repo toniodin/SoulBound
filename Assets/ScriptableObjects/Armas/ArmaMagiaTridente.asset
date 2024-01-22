@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: ArmaMagiaTridente
   m_EditorClassIdentifier: 
   ArmaIcono: {fileID: 21300000, guid: c6d080aaf4c5522458b8bd17ac49c154, type: 3}
-  IconoSkill: {fileID: 4386929954262546681, guid: f04dd7ab61f6ab042934f0febce63f11, type: 3}
+  IconoSkill: {fileID: 1137134465, guid: 5a09970b9ce7b304687f610ec931fd33, type: 3}
   Tipo: 0
   "Da\xF1o": 10
+  ProyectilPrefab: {fileID: 8324498671071112989, guid: 4902c56b219df434f99b1e7613e092e3, type: 3}
   ManaRequerida: 20
   ChanceCritico: 4
   ChanceBloqueo: 3.5

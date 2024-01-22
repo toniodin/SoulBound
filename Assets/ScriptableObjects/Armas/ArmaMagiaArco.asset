@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ArmaMagiaArco
   m_EditorClassIdentifier: 
   ArmaIcono: {fileID: 21300000, guid: e438fa8162b9727498ef95cb711b24c9, type: 3}
-  IconoSkill: {fileID: 457560810503069357, guid: 3c0d6432fc503874488e21e85df56704, type: 3}
+  IconoSkill: {fileID: -269094173, guid: 0a51867ab842efa4381350f1ecc4d9ad, type: 3}
   Tipo: 0
   "Da\xF1o": 2
-  ProyectilPrefab: {fileID: 8871684737948496090, guid: 0ee418a03e9d5824bb33e9c22eab2c86, type: 3}
-  ManaRequerida: 15
+  ProyectilPrefab: {fileID: 7809270254221079266, guid: 9e00413046e7a9e46a4456f8c3e7f7c4, type: 3}
+  ManaRequerida: 5
   ChanceCritico: 1.5
   ChanceBloqueo: 0
