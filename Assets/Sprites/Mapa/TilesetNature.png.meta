@@ -209,11 +209,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -252,6 +253,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
@@ -264,6 +266,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -276,6 +279,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -288,6 +292,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -428,7 +433,7 @@ TextureImporter:
         width: 15
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -449,7 +454,7 @@ TextureImporter:
         width: 15
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,7 +538,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1184,7 +1189,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1205,7 +1210,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1226,7 +1231,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1247,7 +1252,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1268,7 +1273,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1289,7 +1294,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1310,7 +1315,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1331,7 +1336,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1352,7 +1357,7 @@ TextureImporter:
         width: 16
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1373,7 +1378,7 @@ TextureImporter:
         width: 16
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1394,7 +1399,7 @@ TextureImporter:
         width: 15
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1415,7 +1420,7 @@ TextureImporter:
         width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1436,7 +1441,7 @@ TextureImporter:
         width: 15
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1457,7 +1462,7 @@ TextureImporter:
         width: 14
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1478,7 +1483,7 @@ TextureImporter:
         width: 16
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1499,7 +1504,7 @@ TextureImporter:
         width: 15
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1520,7 +1525,7 @@ TextureImporter:
         width: 14
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1541,7 +1546,7 @@ TextureImporter:
         width: 16
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1562,7 +1567,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1583,7 +1588,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1604,7 +1609,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1612,6 +1617,216 @@ TextureImporter:
       bones: []
       spriteID: 0e52091563ef419c0800000000000000
       internalID: -3957258663301732896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_63
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8bd319f19a05f489e7df312ee91888
+      internalID: 1739380672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_64
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0749ef12189f3c4bbcf48f8d85fd715
+      internalID: -27205084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_65
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 257
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0909343821ad944098075c79fb2f033
+      internalID: -2059529728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_66
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 257
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f916778de8e45df4389332174d30836a
+      internalID: 296491750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_67
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 256
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdcf348f2fa2aba4ba16b8d578b25c75
+      internalID: 1693438397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 209
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8c74fe5e7b1bf458e4d0f2bbe4ec97
+      internalID: 120536897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_69
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 209
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7f718cfd3e833409711ffa1e083695
+      internalID: 33532559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 161
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9297eb1ec8cc0484b9fa69c3b34306ce
+      internalID: 2084678397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_71
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdc85883edac2f4ebb6e2da46191321
+      internalID: -1743070977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesetNature_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7267262de21fa42a6f47c5b1b2b3ac
+      internalID: 354257704
       vertices: []
       indices: 
       edges: []
@@ -1627,72 +1842,81 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesetNature_9: 2007063168123445105
-      TilesetNature_25: -4766088512703594412
-      TilesetNature_44: -3729204188765737869
-      TilesetNature_21: 4435530676263758396
-      TilesetNature_2: 3740469535367672815
-      TilesetNature_47: 3236355580147579868
-      TilesetNature_23: -8429454653909586362
-      TilesetNature_46: -4840776339254846321
-      TilesetNature_55: -404937968978806861
-      TilesetNature_13: -3706595718124350120
-      TilesetNature_31: -7440599623689839455
-      TilesetNature_28: 4527448762353937636
-      TilesetNature_61: -8314373194769376067
-      TilesetNature_24: -5163725257882518253
-      TilesetNature_4: -64616202363088879
+      TilesetNature_0: -7874150192348566317
+      TilesetNature_1: -310051540473632924
       TilesetNature_10: 8422927115599155574
+      TilesetNature_11: -6869613983314767778
+      TilesetNature_12: 3612150266607407241
+      TilesetNature_13: -3706595718124350120
+      TilesetNature_14: -7142851510139595349
+      TilesetNature_15: 245098994943110347
+      TilesetNature_16: 8460269052970605458
       TilesetNature_17: 2140059905481110391
-      TilesetNature_51: -7094711717578927619
-      TilesetNature_62: -3957258663301732896
-      TilesetNature_37: 9140700683285400788
-      TilesetNature_56: -3850962088879659835
-      TilesetNature_53: -8815434460339774556
-      TilesetNature_33: -496512594666633853
-      TilesetNature_32: 1761076342045304818
-      TilesetNature_39: -221327479027816785
+      TilesetNature_18: -6657064129008135080
+      TilesetNature_19: -825559757955424356
+      TilesetNature_2: 3740469535367672815
+      TilesetNature_20: -4238413407718546303
+      TilesetNature_21: 4435530676263758396
+      TilesetNature_22: -2110350280201256191
+      TilesetNature_23: -8429454653909586362
+      TilesetNature_24: -5163725257882518253
+      TilesetNature_25: -4766088512703594412
+      TilesetNature_26: -3377533224988797876
       TilesetNature_27: 173109119271577279
-      TilesetNature_49: 5321373389659772108
-      TilesetNature_5: -5737872169142031569
+      TilesetNature_28: 4527448762353937636
       TilesetNature_29: -7098344440009116292
       TilesetNature_3: -5280573372002234633
-      TilesetNature_59: -7931364430163794976
-      TilesetNature_22: -2110350280201256191
-      TilesetNature_58: 5813743646819827200
-      TilesetNature_50: 8118532471155676032
-      TilesetNature_1: -310051540473632924
-      TilesetNature_40: -1792890163688971253
       TilesetNature_30: -8470807085826701785
-      TilesetNature_43: 5675743811217045366
-      TilesetNature_41: -1428820360665396414
-      TilesetNature_45: -8685947931817090218
-      TilesetNature_14: -7142851510139595349
-      TilesetNature_57: 8578447082385279622
-      TilesetNature_7: 4379473115401697216
-      TilesetNature_6: -8898299685072861272
-      TilesetNature_0: -7874150192348566317
-      TilesetNature_19: -825559757955424356
+      TilesetNature_31: -7440599623689839455
+      TilesetNature_32: 1761076342045304818
+      TilesetNature_33: -496512594666633853
+      TilesetNature_34: 5035315943003166189
       TilesetNature_35: -1267255538682989212
       TilesetNature_36: -1686285729914895233
-      TilesetNature_20: -4238413407718546303
-      TilesetNature_11: -6869613983314767778
-      TilesetNature_26: -3377533224988797876
-      TilesetNature_52: -7070563800408011638
-      TilesetNature_42: -8089266170735291303
-      TilesetNature_54: 5313250744990931831
-      TilesetNature_12: 3612150266607407241
-      TilesetNature_8: 2278481083563173663
-      TilesetNature_60: -2791354041816361123
+      TilesetNature_37: 9140700683285400788
       TilesetNature_38: -7030417963330528450
+      TilesetNature_39: -221327479027816785
+      TilesetNature_4: -64616202363088879
+      TilesetNature_40: -1792890163688971253
+      TilesetNature_41: -1428820360665396414
+      TilesetNature_42: -8089266170735291303
+      TilesetNature_43: 5675743811217045366
+      TilesetNature_44: -3729204188765737869
+      TilesetNature_45: -8685947931817090218
+      TilesetNature_46: -4840776339254846321
+      TilesetNature_47: 3236355580147579868
       TilesetNature_48: 7618791277954967414
-      TilesetNature_16: 8460269052970605458
-      TilesetNature_18: -6657064129008135080
-      TilesetNature_15: 245098994943110347
-      TilesetNature_34: 5035315943003166189
-  spritePackingTag: 
+      TilesetNature_49: 5321373389659772108
+      TilesetNature_5: -5737872169142031569
+      TilesetNature_50: 8118532471155676032
+      TilesetNature_51: -7094711717578927619
+      TilesetNature_52: -7070563800408011638
+      TilesetNature_53: -8815434460339774556
+      TilesetNature_54: 5313250744990931831
+      TilesetNature_55: -404937968978806861
+      TilesetNature_56: -3850962088879659835
+      TilesetNature_57: 8578447082385279622
+      TilesetNature_58: 5813743646819827200
+      TilesetNature_59: -7931364430163794976
+      TilesetNature_6: -8898299685072861272
+      TilesetNature_60: -2791354041816361123
+      TilesetNature_61: -8314373194769376067
+      TilesetNature_62: -3957258663301732896
+      TilesetNature_63: 1739380672
+      TilesetNature_64: -27205084
+      TilesetNature_65: -2059529728
+      TilesetNature_66: 296491750
+      TilesetNature_67: 1693438397
+      TilesetNature_68: 120536897
+      TilesetNature_69: 33532559
+      TilesetNature_7: 4379473115401697216
+      TilesetNature_70: 2084678397
+      TilesetNature_71: -1743070977
+      TilesetNature_72: 354257704
+      TilesetNature_8: 2278481083563173663
+      TilesetNature_9: 2007063168123445105
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
