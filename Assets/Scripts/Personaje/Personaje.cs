@@ -11,6 +11,8 @@ public class Personaje : MonoBehaviour
     public PersonajeAnimaciones PersonajeAnimaciones { get; private set; }
     public PersonajeMana PersonajeMana { get; private set; }
 
+    private Vector3 puntoRespawn;
+
     private void Awake()
     {
         PersonajeAtaque = GetComponent<PersonajeAtaque>();
@@ -22,6 +24,7 @@ public class Personaje : MonoBehaviour
 
     public void RestaurarPersonaje()
     {
+        transform.position = puntoRespawn;
         PersonajeVida.RestaurarPersonaje();
         PersonajeAnimaciones.RevivirPersonaje();
         PersonajeMana.RestablecerMana();
@@ -52,7 +55,12 @@ public class Personaje : MonoBehaviour
 
         stats.PuntosDisponibles -= 1;
     }
-    
+
+    public void SetearPuntoRespawn(Vector3 punto)
+    {
+        puntoRespawn = punto;
+    }
+
     private void OnEnable()
     {
         AtributoButton.EventoAgregarAtributo += AtributoRespuesta;
