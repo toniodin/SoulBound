@@ -63,7 +63,7 @@ public class Personaje : MonoBehaviour
 
     private void OnEnable()
     {
-
+        //Me cago en el ANDRIW
         AtributoButton.EventoAgregarAtributo += AtributoRespuesta;
     }
 
