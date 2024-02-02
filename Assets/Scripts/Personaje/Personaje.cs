@@ -63,6 +63,7 @@ public class Personaje : MonoBehaviour
 
     private void OnEnable()
     {
+
         AtributoButton.EventoAgregarAtributo += AtributoRespuesta;
     }
 
