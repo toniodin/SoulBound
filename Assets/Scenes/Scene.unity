@@ -638,9 +638,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3857470697188663623, guid: 5a97d107df4bc464fb7e6edd3dadb83c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 755788648}
-    - targetCorrespondingSourceObject: {fileID: 3857470697188663623, guid: 5a97d107df4bc464fb7e6edd3dadb83c, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 755788650}
   m_SourcePrefab: {fileID: 100100000, guid: 5a97d107df4bc464fb7e6edd3dadb83c, type: 3}
 --- !u!4 &82081540 stripped
@@ -8039,6 +8036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589406314}
   - component: {fileID: 589406315}
+  - component: {fileID: 589406316}
   m_Layer: 0
   m_Name: Canvas_2
   m_TagString: Untagged
@@ -8105,15 +8103,29 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.69680834, y: 1.1701689}
-      - {x: 0, y: 1.3618433}
-      - {x: -0.30685234, y: 1.2453816}
-      - {x: -0.6909447, y: 0.9313333}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 0.52615976, y: 0.88942504}
+      - {x: -0.2532196, y: 1.0095372}
+      - {x: -0.4389677, y: 0.8710563}
+      - {x: -0.6028681, y: 0.7771995}
+      - {x: -0.9125233, y: 0.53471303}
+      - {x: -0.82449096, y: -1.0347131}
+      - {x: 0.77494776, y: -1.0237033}
+      - {x: 0.9565611, y: 0.51819867}
   m_UseDelaunayMesh: 0
+--- !u!114 &589406316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589406313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd8f45edad5e394ca8dc2c6b96e98b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pozoButtonInteractuar: {fileID: 528000622}
+  _personaje: {fileID: 2032975355}
 --- !u!1 &620274718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9775,20 +9787,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3857470697188663623, guid: 5a97d107df4bc464fb7e6edd3dadb83c, type: 3}
   m_PrefabInstance: {fileID: 82081539}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &755788648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755788645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffd8f45edad5e394ca8dc2c6b96e98b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pozoButtonInteractuar: {fileID: 528000622}
-  _personaje: {fileID: 2032975355}
 --- !u!60 &755788650
 PolygonCollider2D:
   m_ObjectHideFlags: 0
