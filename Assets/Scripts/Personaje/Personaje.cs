@@ -12,6 +12,7 @@ public class Personaje : MonoBehaviour
     public PersonajeMana PersonajeMana { get; private set; }
 
     private Vector3 puntoRespawn;
+    public bool estadoEscudo = false;
 
     private void Awake()
     {
@@ -21,7 +22,16 @@ public class Personaje : MonoBehaviour
         PersonajeMana = GetComponent<PersonajeMana>();
         PersonajeExperiencia = GetComponent<PersonajeExperiencia>();
     }
-
+    public void ProtegerPersonaje(bool estado)
+    {
+        estadoEscudo = estado;
+        PersonajeAnimaciones.ProtegerPersonaje(true);
+    }
+    public void DesprotegerPersonaje(bool estado)
+    {
+        estadoEscudo = estado;
+        PersonajeAnimaciones.DesprotegerPersonaje(false);
+    }
     public void RestaurarPersonaje()
     {
         transform.position = puntoRespawn;

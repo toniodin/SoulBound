@@ -72,6 +72,11 @@ public class PersonajeMana : MonoBehaviour
         ManaActual = manaInicial;
         ActualizarBarraMana();
     }
+    public void RestarEscudoMana()
+    {
+        ManaActual -= 2f;
+        ActualizarBarraMana();
+    }
     
     private void ActualizarBarraMana()
     {

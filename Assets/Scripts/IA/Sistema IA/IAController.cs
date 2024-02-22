@@ -51,11 +51,13 @@ public class IAController : MonoBehaviour
     public LayerMask PersonajeLayerMask => personajeLayerMask;
     public float RangoDeAtaqueDeterminado => tipoAtaque == TiposDeAtaque.Embestida ? rangoDeEmbestida : rangoDeAtaque;
     
+    private ShieldManager shieldManager;
     private void Start()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
         EstadoActual = estadoInicial;
         EnemigoMovimiento = GetComponent<EnemigoMovimiento>();
+        shieldManager = FindObjectOfType<ShieldManager>();
     }
 
     private void Update()
@@ -100,8 +102,8 @@ public class IAController : MonoBehaviour
             transform.position = Vector3.Lerp(posicionInicial, posicionDeAtaque, interpolacion);
             yield return null;
         }
-
-        if (PersonajeReferencia != null)
+        
+        if (PersonajeReferencia != null && !shieldManager.estado)
         {
             AplicarDañoAlPersonaje(cantidad);
         }
