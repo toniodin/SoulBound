@@ -51,11 +51,13 @@ public class IAController : MonoBehaviour
     public LayerMask PersonajeLayerMask => personajeLayerMask;
     public float RangoDeAtaqueDeterminado => tipoAtaque == TiposDeAtaque.Embestida ? rangoDeEmbestida : rangoDeAtaque;
     
+    private ShieldManager shieldManager;
     private void Start()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
         EstadoActual = estadoInicial;
         EnemigoMovimiento = GetComponent<EnemigoMovimiento>();
+        shieldManager = FindObjectOfType<ShieldManager>();
     }
 
     private void Update()
@@ -73,7 +75,10 @@ public class IAController : MonoBehaviour
 
     public void AtaqueMelee(float cantidad)
     {
-        StartCoroutine(IEMelee(cantidad));
+        if (PersonajeReferencia != null)
+        {
+            AplicarDañoAlPersonaje(cantidad);
+        }
     }
 
     public void AtaqueEmbestida(float cantidad)
@@ -97,33 +102,8 @@ public class IAController : MonoBehaviour
             transform.position = Vector3.Lerp(posicionInicial, posicionDeAtaque, interpolacion);
             yield return null;
         }
-
-        if (PersonajeReferencia != null)
-        {
-            AplicarDañoAlPersonaje(cantidad);
-        }
-
-        _boxCollider2D.enabled = true;
-    }
-
-    private IEnumerator IEMelee(float cantidad)
-    {
-        Vector3 personajePosicion = PersonajeReferencia.position;
-        Vector3 posicionInicial = transform.position;
-        Vector3 direccionHaciaPersonaje = (personajePosicion - posicionInicial).normalized;
-        Vector3 posicionDeAtaque = personajePosicion - direccionHaciaPersonaje * 0.5f;
-        _boxCollider2D.enabled = false;
-
-        float transicionDeAtaque = 0f;
-        while (transicionDeAtaque <= 1f)
-        {
-            transicionDeAtaque += Time.deltaTime * velocidadMovimiento;
-            float interpolacion = (-Mathf.Pow(transicionDeAtaque, 2) + transicionDeAtaque) * 4f;
-            transform.position = Vector3.Lerp(posicionInicial, posicionDeAtaque, interpolacion);
-            yield return null;
-        }
-
-        if (PersonajeReferencia != null)
+        
+        if (PersonajeReferencia != null && !shieldManager.estado)
         {
             AplicarDañoAlPersonaje(cantidad);
         }
