@@ -11,6 +11,7 @@ public class ShieldManager : MonoBehaviour
 
     private void Update()
     {
+       
         if (Input.GetKeyDown(KeyCode.C))
         {
             estado = true;
